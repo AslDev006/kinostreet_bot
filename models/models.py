@@ -43,7 +43,7 @@ class MovieModels(models.Model):
     category = models.CharField(max_length=25, choices=Categories, default=primieras)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
-    key = models.CharField(max_length=255, unique=True)
+    key = models.CharField(max_length=255, unique=True, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     def __str__(self):
         return f"{self.key} {self.title}"
